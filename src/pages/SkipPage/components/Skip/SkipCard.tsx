@@ -13,9 +13,12 @@ const SkipCard: React.FC<Props> = ({ skip }) => {
             <div>
                 <img src={skip.image} alt="" />
             </div>
-            <div className='my-4 flex flex-col gap-1'>
+            <div className='my-4 flex flex-row justify-between items-start gap-1'>
                 <h1 className='text-xl font-bold'>{skip?.size} yard skip </h1>
-                <h2 className='text-sm text-gray-500'>{skip.hire_period_days} day hire period</h2>
+                <div className=''>
+                    <p className='text-xs text-gray-500'>Hire Period</p>
+                    <h2 className='text-sm '>{skip.hire_period_days} day hire period</h2>
+                </div>
             </div>
 
             <div className='my-4 flex flex-row items-end gap-3'>
