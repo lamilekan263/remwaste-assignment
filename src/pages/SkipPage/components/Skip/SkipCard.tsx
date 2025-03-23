@@ -34,4 +34,6 @@ const SkipCard: React.FC<Props> = ({ skip }) => {
     )
 }
 
+
+
 export default SkipCard
