@@ -1,16 +1,22 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 import React from 'react'
+import { Skip } from '../../api/skipApi'
 
-// import { Skip } from '../../../../types'
+
 
 type Props = {
-    skip: any
+    skip: Skip,
+    isSelected: Boolean
+    handleSelectedSkip: (skip: Skip) => void
 }
-
-const SkipCard: React.FC<Props> = ({ skip }) => {
+// 
+const SkipCard: React.FC<Props> = ({ skip, isSelected, handleSelectedSkip }) => {
     return (
-        <div className='bg-neutral-800 rounded-lg p-6 capitalize cursor-pointer border-1 border-neutral-900 hover:border-blue-700'>
-            <div>
+        <div onClick={() => handleSelectedSkip(skip)} className={`bg-neutral-800 rounded-lg p-6 capitalize cursor-pointer border-1 ${isSelected ? 'border-blue-700' : 'border-neutral-900'} hover:border-blue-700`}>
+            <div className='relative'>
+                <div className={`${isSelected ? 'inline-block' : 'hidden'} bg-blue-700  p-1 rounded-full absolute right-2 top-2`}>
+                    <Check />
+                </div>
                 <img src={skip.image} alt="" />
             </div>
             <div className='my-4 flex flex-row justify-between items-start gap-1'>

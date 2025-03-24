@@ -1,10 +1,9 @@
-import { useFetchSkipByLocation } from '../../../../hooks/useFetchSkipByLocation';
 import SkipCard from './SkipCard';
+import { useSkipContext } from '../../providers/SkipProvider';
 
 const SkipList = () => {
 
-    const { skips, fetchSkipByLocationStatus } = useFetchSkipByLocation()
-
+    const { paginatedSkips, handleSelectedSkip, selectedSkip, fetchSkipByLocationStatus } = useSkipContext()
     return (
         <>
             {fetchSkipByLocationStatus === 'IDLE' ? <p>Welcome</p> : null}
@@ -13,7 +12,11 @@ const SkipList = () => {
 
             {fetchSkipByLocationStatus === 'SUCCESS' ? (
                 < div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4' >
-                    {skips.map(skip => <SkipCard key={skip.id} skip={skip} />)}
+                    {paginatedSkips.map(skip => <SkipCard key={skip.id}
+                        skip={skip}
+                        handleSelectedSkip={handleSelectedSkip}
+                        isSelected={selectedSkip === skip}
+                    />)}
                 </div>
             ) : null}
         </>
@@ -21,14 +24,3 @@ const SkipList = () => {
 }
 
 export default SkipList
-
-
-// {
-//     fetchSkipByLocationStatus === 'SUCCESS' ? (
-//         {
-//                 < div className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4' >
-//         skips.map(skip => <SkipCard skip={skip} />
-//         </ >
-//                 )
-// }
-//             ) : null}
