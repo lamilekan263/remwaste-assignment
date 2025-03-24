@@ -13,6 +13,8 @@ type SkipContextType = {
     totalPages: number
     currentPage: number
     setCurrentPage: (page: number | ((prev: number) => number)) => void
+    searchQuery: string
+    setSearchQuery: (query: string) => void
 }
 
 const SkipContext = createContext<SkipContextType | undefined>(undefined)
@@ -31,7 +33,7 @@ export const SkipProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     useEffect(() => {
         setCurrentPage(1)
-    }, [searchQuery]) 
+    }, [searchQuery])
 
     const filteredSkips = skips.filter((skip) => {
         const matchesSearch =
@@ -76,6 +78,8 @@ export const SkipProvider: React.FC<{ children: React.ReactNode }> = ({ children
         totalPages,
         currentPage,
         setCurrentPage,
+        searchQuery,
+        setSearchQuery,
 
     }
 

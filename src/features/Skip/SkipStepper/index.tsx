@@ -6,8 +6,8 @@ import {
     Calendar,
     CreditCard,
 } from "lucide-react";
-
-
+import StepConnector from "./StepConnector";
+import Step from "./Step";
 
 function SkipStepper() {
     return (
@@ -35,35 +35,3 @@ function SkipStepper() {
 }
 
 export default SkipStepper;
-
-
-function Step({
-    icon,
-    label,
-    isActive = false,
-    isCompleted = false,
-}: {
-    icon: React.ReactNode
-    label: string
-    isActive?: boolean
-    isCompleted?: boolean
-}) {
-    return (
-        <div className="flex items-center gap-1">
-            <div className={"flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-200"}>
-                {icon}
-            </div>
-            <span className={`text-sm font-medium ${isActive ? "text-white" : isCompleted ? "text-blue-500" : "text-slate-400"}`}>
-                {label}
-            </span>
-        </div>
-    );
-}
-
-function StepConnector({ isActive = false }) {
-    return (
-        <div className="w-16 md:w-14">
-            <div className={`h-[1px] ${isActive ? "bg-blue-600" : "bg-slate-700"} transition-colors duration-200`}></div>
-        </div>
-    );
-}

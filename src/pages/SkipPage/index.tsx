@@ -1,8 +1,7 @@
-
 import SkipList from "../../features/Skip/SkipList"
-import SkipStepper from "../../features/Skip/SkipStepper"
 import SkipSelectedFooter from "../../features/Skip/SkipSelectedFooter"
-import Pagination from "../../components/pagination"
+import SkipStepper from "../../features/Skip/SkipStepper"
+
 
 
 const SkipPage = () => {
@@ -15,7 +14,6 @@ const SkipPage = () => {
           <p className="text-slate-300">Select the skip size that best suits your needs</p>
         </div>
         <SkipList />
-        <Pagination/>
       </div>
       <SkipSelectedFooter />
     </div>

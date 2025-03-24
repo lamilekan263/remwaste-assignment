@@ -31,8 +31,8 @@ const SkipCard: React.FC<Props> = ({ skip, isSelected, handleSelectedSkip }) => 
                 <span className='text-xl font-bold text-blue-700'>£ {skip.price_before_vat}</span>
                 <span className='text-sm text-gray-500'>per week</span>
             </div>
-            <button className='capitalize text-base  bg-neutral-900 rounded-lg w-full py-3 flex justify-center items-center gap-2'>
-                Select this skip
+            <button className={`capitalize text-base  ${isSelected ? 'bg-blue-700' : 'bg-neutral-900'} rounded-lg w-full py-3 flex justify-center items-center gap-2`}>
+                {isSelected ?'Selected' :'Select this skip'}
                 <ArrowRight />
             </button>
 
