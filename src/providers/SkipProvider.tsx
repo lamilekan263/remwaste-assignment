@@ -37,8 +37,7 @@ export const SkipProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const filteredSkips = skips.filter((skip) => {
         const matchesSearch =
-            skip.size.toString().toLowerCase().includes(searchQuery.toLowerCase()) ||
-            skip.postcode.toLowerCase().includes(searchQuery.toLowerCase())
+            skip.size.toString().toLowerCase().includes(searchQuery.toLowerCase())
         return matchesSearch
     })
 
