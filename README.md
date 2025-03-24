@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+#RemWaste Coding Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Overview
 
-Currently, two official plugins are available:
+This project is a frontend application built for the RemWaste coding assignment. The application is developed using modern frontend technologies, focusing on performance, maintainability, and scalability.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tech Stack
 
-## Expanding the ESLint configuration
+Vite: Used as the build tool for a fast and optimized development experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React (with Context API): Utilized for building the UI and managing global state efficiently.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Tailwind CSS: Used for styling to ensure a clean and responsive design.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Axios: Employed for handling HTTP requests and interacting with APIs.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Feature-Based Architecture: Implemented to ensure better code organization and scalability.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Project Structure
+
+The project follows a feature-based architecture where each feature has its own directory containing components, hooks, and related files. This approach improves maintainability and separation of concerns.
+
+/src
+  ├── components       # Reusable UI components
+  ├── context          # Global state management using Context API
+  ├── features         # Feature-based modules
+  ├── hooks            # Custom hooks for shared logic
+  ├── services         # API calls using Axios
+  ├── styles           # Global styles using Tailwind CSS
+  ├── utils            # Utility functions
+  ├── App.tsx          # Main application entry
+  ├── main.tsx         # React entry point
+
+Key Features
+
+Global State Management: Used Context API to manage and share state across different components.
+
+Efficient Styling: Leveraged Tailwind CSS for utility-first styling, improving development speed and consistency.
+
+API Handling: Utilized Axios for making API requests, ensuring structured and maintainable network calls.
+
+Scalability: Adopted a feature-based architecture to facilitate project scalability and ease of maintenance.
+
+How to Run the Project
+
+Prerequisites
+
+Ensure you have the following installed on your system:
+
+Node.js (latest LTS recommended)
+
+npm or yarn
+
+Steps to Run
+
+Clone the repository:
+
+git clone <repo-url>
+cd remwaste-project
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Open the application in your browser at http://localhost:5173/ (default Vite port).
+
