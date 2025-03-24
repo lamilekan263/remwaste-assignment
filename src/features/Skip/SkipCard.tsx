@@ -12,7 +12,7 @@ type Props = {
 // 
 const SkipCard: React.FC<Props> = ({ skip, isSelected, handleSelectedSkip }) => {
     return (
-        <div onClick={() => handleSelectedSkip(skip)} className={`bg-neutral-800 rounded-lg p-6 capitalize cursor-pointer border-1 ${isSelected ? 'border-blue-700' : 'border-neutral-900'} hover:border-blue-700`}>
+        <div onClick={() => handleSelectedSkip(skip)} className={`bg-neutral-800 rounded-lg p-6 capitalize cursor-pointer border-1 ${isSelected ? 'border-blue-800' : 'border-neutral-900 hover:border-blue-700'} `}>
             <div className='relative'>
                 <div className={`${isSelected ? 'inline-block' : 'hidden'} bg-blue-700  p-1 rounded-full absolute right-2 top-2`}>
                     <Check />
@@ -28,7 +28,7 @@ const SkipCard: React.FC<Props> = ({ skip, isSelected, handleSelectedSkip }) => 
             </div>
 
             <div className='my-4 flex flex-row items-end gap-3'>
-                <span className='text-xl font-bold text-blue-700'>${skip.price_before_vat}</span>
+                <span className='text-xl font-bold text-blue-700'>£ {skip.price_before_vat}</span>
                 <span className='text-sm text-gray-500'>per week</span>
             </div>
             <button className='capitalize text-base  bg-neutral-900 rounded-lg w-full py-3 flex justify-center items-center gap-2'>
