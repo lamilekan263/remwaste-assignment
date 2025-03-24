@@ -10,7 +10,9 @@ type SkipContextType = {
     fetchSkipByLocationStatus: ApiStatus
     selectedSkip: Skip | null;
     handleSelectedSkip: (skip: Skip) => void;
-
+    totalPages: number
+    currentPage: number
+    setCurrentPage: (page: number | ((prev: number) => number)) => void
 }
 
 const SkipContext = createContext<SkipContextType | undefined>(undefined)
@@ -71,6 +73,9 @@ export const SkipProvider: React.FC<{ children: React.ReactNode }> = ({ children
         fetchSkipByLocationStatus,
         selectedSkip,
         handleSelectedSkip,
+        totalPages,
+        currentPage,
+        setCurrentPage,
 
     }
 
